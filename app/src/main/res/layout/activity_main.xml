@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="@dimen/small_padding"
     android:paddingStart="@dimen/layout_padding"
@@ -14,25 +15,57 @@
 
     <TextView
         android:id="@+id/name_text"
+        style="@style/NameStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/name"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/nickname_edit"
+        style="@style/NameStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/what_is_your_nickname"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:textAlignment="center"
-        style="@style/NameStyle" />
+        android:textColorHint="#78909C" />
+
+    <Button
+        android:id="@+id/done_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:fontFamily="@font/roboto"
+        android:text="@string/done" />
+
+    <TextView
+        android:id="@+id/nickname_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:background="@color/colorAccent"
+        android:paddingBottom="@dimen/small_padding"/>
 
     <ImageView
         android:id="@+id/star_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_margin"
         android:contentDescription="@string/yellow_star"
         app:srcCompat="@android:drawable/btn_star_big_on"
-        android:layout_marginTop="@dimen/layout_margin"
         tools:ignore="ImageContrastCheck" />
 
     <ScrollView
+        android:id="@+id/bio_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/bio_scroll">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/bio_text"
